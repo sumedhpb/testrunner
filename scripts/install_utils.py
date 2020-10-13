@@ -162,6 +162,7 @@ class NodeHelper:
 
     def install_cb(self):
         self.pre_install_cb()
+        self.set_vm_swappiness_and_thp()
         if self.actions_dict[self.info.deliverable_type]["install"]:
             if "suse" in self.get_os():
                 cmd = self.actions_dict[self.info.deliverable_type]["suse_install"]
